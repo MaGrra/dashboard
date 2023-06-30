@@ -7,8 +7,8 @@
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: 1.5fr 5fr;
+    grid-template-columns: minmax(250px, 1fr) 5fr;
+    grid-template-rows: minmax(200px, 2fr) 8fr;
     height: 100vh;
     width: 100vw;
 }
@@ -31,19 +31,15 @@
     text-align: center;
 }
 
-.main {
-    background-color: blueviolet;
-    padding: 30px;
-}
-
 .header {
     background-color: yellow;
     padding: 30px;
     grid-area: 1/2;
     display: grid;
     grid-template-columns: 3fr 2fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: minmax(50px,1fr) minmax(100px, 1fr);
     gap: 30px;
+    max-height: 191px;
 }
 .search {
     display: flex;
@@ -82,3 +78,100 @@ p:last-of-type {
     border-radius: 30px;
     text-align: center;
 }
+.main {
+    background-color: blueviolet;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 4fr 1.4fr;
+    grid-template-rows: repeat(10, 8%);
+    gap: 20px;
+}
+#one-title {
+    grid-column: span 2;
+}
+.projects {
+    grid-area: 1/1/10/1 ;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, minmax(200px, 07fr));
+    grid-template-rows: 30px 1fr 1fr 1fr;
+}
+
+.card {
+    background-color: aliceblue;
+    border-radius: 16px;
+    padding: 20px;
+}
+.side-top {
+
+    grid-column: 2;
+    grid-row: 1 / 5;
+    display: grid;
+    grid-template-rows: 50px
+}
+
+#hm {
+    background-color: aliceblue;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow: scroll; 
+}
+#hm::-webkit-scrollbar {
+    display: none;
+  }
+.news {
+    padding: 10px 0px 10px 0px;
+}
+.news:nth-child(2) {
+    border-bottom: solid 1px rgba(184, 184, 184, 0.418);
+    border-top: solid 1px rgba(184, 184, 184, 0.418);
+
+}
+.side-bot {
+    grid-row: 5 / 10;
+    display: grid;
+    grid-template-rows: 50px 4fr;
+    border-radius: 10px;
+    gap: 10px;
+    min-height: 400px;
+}
+
+.side-bot>div {
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column ;
+    justify-content: space-between;
+    gap: 10px
+    
+
+}
+.profile {
+    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr;
+}
+.profile img {
+    grid-row: span 2;
+    background-color: red;
+}
+.img-wrap {
+    grid-row: span 2;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-left: 10px;
+  }
+  
+.profile img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+  }
