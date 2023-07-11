@@ -14,16 +14,25 @@
 }
 
 .sidebar {
-    background-color: aqua;
+    color:#F6F7F8;
+    background-color: #11635d;
     grid-row: span 2;
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: repeat(12, 50px);
     padding: 30px;
     column-gap: 20px;
+    align-items: center;
+}
+.sidebar svg {
+    fill: #F6F7F8;
+    max-height: 2em;
 }
 .section {
     font-size: 24px;
+}
+.section:hover {
+    transform: scale(1.02)
 }
 
 
@@ -32,36 +41,61 @@
 }
 
 .header {
-    background-color: yellow;
+    background-color: #F6F7F8;
     padding: 30px;
     grid-area: 1/2;
     display: grid;
     grid-template-columns: 3fr 2fr;
     grid-template-rows: minmax(50px,1fr) minmax(100px, 1fr);
     gap: 30px;
+    row-gap: 10px;
     max-height: 191px;
+}
+.header svg {
+    max-height: 2em;
+}
+.header svg:hover {
+    fill: orange;
 }
 .search {
     display: flex;
     justify-content: flex-start;
     gap: 20px;
 }
+.search input {
+    height: 2em;
+    width: 25vw;
+    padding-left: 5px;
+    background-color:#c8cacc;
+    border: none;
+    border-radius: 15px;
+}
 .profile-info {
     display: flex;
     justify-content: flex-end;
     gap: 20px;
+    font-weight: bold;
+    align-content: center;
+    flex-wrap: wrap;
 }
 .greeting {
     display: grid;
-    grid-template-columns: 100px 300px;
+    grid-template-columns: 100px 400px;
     grid-template-rows: 50px 50px;
+    font-weight: bold;
 }
-p:first-of-type {
-    justify-self: start;
+.greeting .img-wrap {
+    align-self: center;
 }
-p:last-of-type {
+.greeting p:first-of-type {
     justify-self: start;
+    align-self: flex-end;
+}
+.greeting p:last-of-type {
+    justify-self: start;
+    align-self: flex-end;
     grid-area: 2/2;
+    font-size: 2em;
 }
 .greeting div {
     grid-row: span 2;
@@ -70,16 +104,25 @@ p:last-of-type {
     display: flex;
     gap: 30px;
     justify-self: end;
+    align-self: flex-end;
 }
 .button-container button {
     padding: 10px 40px;
-    height: 60px;
+    height: 40px;
     align-self: center;
     border-radius: 30px;
     text-align: center;
+    font-weight: bold;
+    border: none;
+    background-color:#11635d;
+    color: #EAEDF0;
+    font-size: 1em;
+}
+button:hover {
+    background-color: orange;
 }
 .main {
-    background-color: blueviolet;
+    background-color: #EAEDF0;
     padding: 30px;
     display: grid;
     grid-template-columns: 4fr 1.4fr;
@@ -98,7 +141,7 @@ p:last-of-type {
 }
 
 .card {
-    background-color: aliceblue;
+    background-color:#F6F7F8;
     border-radius: 16px;
     padding: 20px;
 }
@@ -111,7 +154,7 @@ p:last-of-type {
 }
 
 #hm {
-    background-color: aliceblue;
+    background-color: #F6F7F8;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -139,7 +182,7 @@ p:last-of-type {
 }
 
 .side-bot>div {
-    background-color: aliceblue;
+    background-color: #F6F7F8;
     border-radius: 10px;
     padding: 30px 20px;
     display: flex;
@@ -166,12 +209,16 @@ p:last-of-type {
     position: relative;
     overflow: hidden;
     border-radius: 50%;
-    margin-left: 10px;
   }
   
-.profile img {
+.img-wrap img {
     display: inline;
     margin: 0 auto;
     height: 100%;
     width: auto;
   }
+.greeting .img-wrap {
+    width: 80px;
+    height: 80px;
+
+}
